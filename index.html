@@ -4,7 +4,7 @@
 @copyright Copyright (C) 2016
 -->
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -29,12 +29,64 @@
 <script type="text/javascript" src="js/js.js"></script>
 <script type="text/javascript" src="js/skins.js"></script>
 
+<script src="BMSPushSDK.js" async></script>
+<script>
+
+function myFunction() {
+
+  var bmsPush = new BMSPush()
+  function callback(response) {
+    alert(response.response)
+  }
+  var initParams = {
+    "appGUID":"3b1edade-2467-4a56-b52d-4cc9479f63b0",
+    "appRegion":".bluemix.net",
+    "clientSecret":"adfc41aa-ea11-443f-8491-2aed1f5eaacf",
+    "websitePushIDSafari": "Optional parameter for Safari Push Notifications only. Refer Docs."
+  }
+
+  //Initialize Push
+  bmsPush.initialize(initParams, callback)
+
+  //Register Push
+  bmsPush.register(function(response) {
+    alert(response.response)
+
+    /*
+    //Retrieve available tags
+    bmsPush.retrieveAvailableTags(function(response) { //Retrieve available tags
+    var jsonResponse = JSON.parse(response.response)
+    var tagsArray = []
+    for (i in jsonResponse.tags){
+    tagsArray.push(jsonResponse.tags[i].name)
+  }
+  alert(tagsArray)
+
+  //Subscribe for tags
+  bmsPush.subscribe(tagsArray,function(response) {
+  alert(response.response)
+
+  //Unsubscribe From tags
+  bmsPush.unSubscribe(tagsArray,function(response) {
+  alert(response.response)
+
+  //delete registration From Push
+  bmsPush.unRegisterDevice(function(response) {
+  alert(response.response)
+})
+})
+})
+}) */
+})
+}
+</script>
+
 </head>
 
 <body id="body_pat" class="red">
 <div id="wrapper">
 <!------------------------- TOOLS -->
-    
+
     <div id="tools">
         <div id="but_expand">+</div>
         <div id="but_collapse">-</div>
@@ -64,7 +116,7 @@
     <div id="navbarHolder">
         <div id="navbar">
             <ul>
-                                
+
                 <li><a id="nav_about" href="#about">ABOUT<span class="m_w">ABOUT</span><span class="m_r">ABOUT</span></a></li>
                 <li><a id="nav_work" href="#work">WORK<span class="m_w">WORK</span><span class="m_r">WORK</span></a></li>
                 <li><a id="nav_projects" href="#projects">Projects<span class="m_w">Projects</span><span class="m_r">Projects</span></a></li>
@@ -74,14 +126,14 @@
     </div><!-- end div #navbarHolder -->
 
 <!------------------------- CONTENT -->
-    
+
     <div id="container">
         <div id="logo" title="John Doe" class="site-message-absolute">
             <div class="nav_logo_w"></div>
         </div>des
 
 <!------------------------- ABOUT -->
-        
+
         <div id="about">
             <a id="logo_big" title="Carlo Montoya" href="index.html"></a>
             <div id="headline" class="left grid">
@@ -133,7 +185,7 @@
                             <ul>
                                 <li class="iit_1 pic selected"><img src="images/projects/slide_w1_01.png" alt="Operations Research" /></li>
                                 <2i class="iit_1 pic"><img src="images/projects/slide_w1_01.png" alt="Operations Research" /></li>
-                            </ul> 
+                            </ul>
                         </div>
                         <div class="item_text">
                             <h3>Operations Research</h3>
@@ -159,7 +211,7 @@
                             <ul>
                                 <li class="iit_2 pic selected"><img src="images/projects/slide_w1_1.jpg" alt="My Work 2" /></li>
                                 <li class="iit_2 pic"><img src="images/projects/slide_w1_1.jpg" alt="My Work 2" /></li>
-                            </ul> 
+                            </ul>
                         </div>
                         <div class="item_text">
                             <h3>My Work 2</h3>
@@ -178,16 +230,16 @@
                             <h5>Client: <span>Client name</span></h5>
                             <a href="http://www.templatesbook.com" title="My Work 2" target="_blank" class="btn_see_it_live">See it live</a>
                             <div class="close_item_info">&nbsp;</div>
-                            
+
                         </div>
                     </div><!-- end div #iit_2 -->
-<!-- WORK 3 -->         
+<!-- WORK 3 -->
                     <div class="prjinfo" id="iit_3">
                         <div class="item_slider">
                             <ul>
                                 <li class="iit_3 pic selected"><img src="images/projects/slide_w1_1.jpg" alt="My Work 3" /></li>
                                 <li class="iit_3 pic"><img src="images/projects/slide_w1_1.jpg" alt="My Work 3" /></li>
-                            </ul> 
+                            </ul>
                         </div>
                         <div class="item_text">
                             <h3>My Work 3</h3>
@@ -205,18 +257,18 @@
                             </ul>
                             <h5>Year: <span>2008</span></h5>
                             <h5>Client: <span>Client name</span></h5>
-                            
+
                             <div class="close_item_info">&nbsp;</div>
-                            
+
                         </div>
                     </div><!-- end div #iit_3 -->
-<!-- WORK 4 -->     
+<!-- WORK 4 -->
                     <div class="prjinfo" id="iit_4">
                         <div class="item_slider">
                             <ul>
                                 <li class="iit_4 pic selected"><img src="images/projects/slide_w1_1.jpg" alt="My Work 4" /></li>
                                 <li class="iit_4 pic"><img src="images/projects/slide_w1_1.jpg" alt="My Work 4" /></li>
-                            </ul> 
+                            </ul>
                         </div>
                         <div class="item_text">
                             <h3>My Work 4</h3>
@@ -236,16 +288,16 @@
                             <h5>Client: <span>Client Name</span></h5>
                             <a href="http://www.templatesbook.com" title="My Work 4" target="_blank" class="btn_see_it_live">See it live</a>
                             <div class="close_item_info">&nbsp;</div>
-                            
+
                         </div>
                     </div><!-- end div #iit_4 -->
-<!-- WORK 5 -->     
+<!-- WORK 5 -->
                     <div class="prjinfo" id="iit_5">
                         <div class="item_slider">
                             <ul>
                                 <li class="iit_5 pic selected"><img src="images/projects/slide_w1_1.jpg" alt="My Work 5" /></li>
                                 <li class="iit_5 pic"><img src="images/projects/slide_w1_1.jpg" alt="My Work 5" /></li>
-                            </ul> 
+                            </ul>
                         </div>
                         <div class="item_text">
                             <h3>My Work 5</h3>
@@ -264,16 +316,16 @@
                             <h5>Client: <span>Client Name</span></h5>
                             <a href="http://www.templatesbook.com" title="My Work 5" target="_blank" class="btn_see_it_live">See it live</a>
                             <div class="close_item_info">&nbsp;</div>
-                            
+
                         </div>
                     </div><!-- end div #iit_5 -->
-<!-- WORK 6 -->     
+<!-- WORK 6 -->
                     <div class="prjinfo" id="iit_6">
                         <div class="item_slider">
                             <ul>
                                 <li class="iit_6 pic selected"><img src="images/projects/slide_w1_1.jpg" alt="My Work 6" /></li>
                                 <li class="iit_6 pic"><img src="images/projects/slide_w1_1.jpg" alt="My Work 6" /></li>
-                            </ul> 
+                            </ul>
                         </div>
                         <div class="item_text">
                             <h3>My Work 6</h3>
@@ -293,16 +345,16 @@
                             <h5>Client: <span>Client Name</span></h5>
                             <a href="http://www.templatesbook.com" title="My Work 6" target="_blank" class="btn_see_it_live">See it live</a>
                             <div class="close_item_info">&nbsp;</div>
-                            
+
                         </div>
                     </div><!-- end div #iit_6 -->
-<!-- WORK 7 -->     
+<!-- WORK 7 -->
                     <div class="prjinfo" id="iit_7">
                         <div class="item_slider">
                             <ul>
                                 <li class="iit_7 pic selected"><img src="images/projects/slide_w1_1.jpg" alt="My Work 7" /></li>
                                 <li class="iit_7 pic"><img src="images/projects/slide_w1_1.jpg" alt="My Work 7" /></li>
-                            </ul> 
+                            </ul>
                         </div>
                         <div class="item_text">
                             <h3>My Work 7</h3>
@@ -322,13 +374,13 @@
                             <div class="close_item_info">&nbsp;</div>
                         </div>
                     </div><!-- end div #iit_7 -->
-<!-- WORK 8 -->     
+<!-- WORK 8 -->
                     <div class="prjinfo" id="iit_8">
                         <div class="item_slider">
                             <ul>
                                 <li class="iit_8 pic selected"><img src="images/projects/slide_w1_1.jpg" alt="My Work 8" /></li>
                                 <li class="iit_8 pic"><img src="images/projects/slide_w1_1.jpg" alt="My Work 8" /></li>
-                            </ul> 
+                            </ul>
                         </div>
                         <div class="item_text">
                             <h3>My Work 8</h3>
@@ -349,13 +401,13 @@
                             <div class="close_item_info">&nbsp;</div>
                         </div>
                     </div><!-- end div #iit_8 -->
-<!-- WORK 9 -->     
+<!-- WORK 9 -->
                     <div class="prjinfo" id="iit_9">
                         <div class="item_slider">
                             <ul>
                                 <li class="iit_9 pic selected"><img src="images/projects/slide_w1_1.jpg" alt="My Work 9" /></li>
                                 <li class="iit_9 pic"><img src="images/projects/slide_w1_1.jpg" alt="My Work 9" /></li>
-                            </ul> 
+                            </ul>
                         </div>
                         <div class="item_text">
                             <h3>My Work 9</h3>
@@ -376,7 +428,7 @@
                         </div>
                     </div><!-- end div #iit_9 -->
                 </div><!-- end div #project -->
-                
+
 <!-- WORKS GRID -->
 
             	<div class="prjGrid">
@@ -435,14 +487,14 @@
                         </span>
                     </div>
                 </div><!-- end div .prjGrid -->
-				
+
             </div><!-- end div .projectsContainer -->
-          <div class="clear"></div>  
+          <div class="clear"></div>
         </div><!-- end div #work -->
         <div class="clear"></div>
-        
+
 <!------------------------- PROJECTS -->
-        
+
         <div id="projects">
             <h2>Projects.</h2>
             <div class="projectsContainer">
@@ -452,7 +504,7 @@
                         <div class="item">
                             <img src="images/projects/thumb_p1.jpg" alt="Low-cost vertical axis wind turbine design" />
                             <a class="hover" title="Low-cost vertical axis wind turbine design" target="_blank"><span class='h3'>Low-cost vertical axis wind turbine design</span></a>
-                        </div>    
+                        </div>
                     </div>
                     <div class="item_text">
                         <h3>Low-cost vertical axis wind turbine design</h3>
@@ -482,7 +534,7 @@
                         <div class="item">
                             <img src="images/projects/thumb_p2.jpg" alt="Turbine Driven Centrifuge Sediment Separator" />
                             <a class="hover" title="Turbine Driven Centrifuge Sediment Separator" target="_blank"><span class='h3'>Turbine Driven Centrifuge Sediment Separator</span></a>
-                        </div>    
+                        </div>
                     </div>
                     <div class="item_text">
                         <h3>Turbine Driven Centrifuge Sediment Separator</h3>
@@ -563,9 +615,9 @@
                 <a href="https://plus.google.com/u/2/116156357673339818118/posts" class="gmail"></a>
             </div><!-- end div .contact_social -->
             <div class="clear"></div>
-			
-			
-           <div id="btn_top"></div> 
+
+
+           <div id="btn_top"></div>
         </div><!-- end div #contact -->
     </div><!-- end div #container -->
 </div><!-- end div #wrapper -->
